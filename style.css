@@ -94,22 +94,84 @@ button:hover{
     font-weight:bold;
     color: #FFF;
 }
-#a{animation-name: am; top:100%; animation-duration: 2s; animation-iteration-count:infinite; animation-delay:500ms;}
-#b{animation-name: bm; top:100%; animation-duration: 2s; animation-iteration-count:infinite; animation-delay:500ms;}
-#c{animation-name: cm; top:100%; animation-duration: 2s; animation-iteration-count:infinite; animation-delay:500ms;}
-#d{animation-name: dm; top:100%; animation-duration: 2s; animation-iteration-count:infinite; animation-delay:500ms;}
-#e{animation-name: em; top:100%; animation-duration: 2s; animation-iteration-count:infinite; animation-delay:500ms;}
-#f{animation-name: fm; top:100%; animation-duration: 2s; animation-iteration-count:infinite; animation-delay:500ms;}
-/* @keyframes am{from{top:100%}to{top:32%}}
-@keyframes bm{from{top:100%}to{top:32%}}
-@keyframes cm{from{top:100%}to{top:32%}}
-@keyframes dm{from{top:100%}to{top:32%}}
-@keyframes em{from{top:100%}to{top:32%}}
-@keyframes fm{from{top:100%}to{top:32%}} */
+#a{/*animation-name: m;*/ top:100%; animation-duration: 1s; animation-iteration-count:infinite; animation-delay:500ms;}
+#b{/*animation-name: m;*/ top:100%; animation-duration: 1s; animation-iteration-count:infinite; animation-delay:500ms;}
+#e{/*animation-name: m;*/ top:100%; animation-duration: 1s; animation-iteration-count:infinite; animation-delay:500ms;}
+#c{/*animation-name: m;*/ top:100%; animation-duration: 1s; animation-iteration-count:infinite; animation-delay:500ms;}
+#d{/*animation-name: m;*/ top:100%; animation-duration: 1s; animation-iteration-count:infinite; animation-delay:500ms;}
+#f{/*animation-name: m;*/ top:100%; animation-duration: 1s; animation-iteration-count:infinite; animation-delay:500ms;}
+@keyframes m{
+    /* from{top:100%}
+    to{top:32%} */
+    0%{top:100%}
+    50%{top:32%}
+    100%{top:100%}
+}
 
 /*playing area end*/
 
 /*absolutes*/
+#set{
+    height:33vmin;
+    width:70vmin;
+    background-color: rgba(255,255,255,0.6);
+    border-radius:10px;
+    padding:3%;
+    overflow-y: auto;
+    overflow-x: auto;
+    animation-name: animator;
+    /* animation-delay: 1s; */
+    animation-duration: 100ms;
+    animation-iteration-count: 1;
+    display: none;
+    position: absolute;
+}
+.save{
+    background-image: none;
+    background-color:transparent;
+    border: 2px solid red;
+    height:fit-content;
+    border-radius:30%;
+    color:red;
+}
+@keyframes animator{
+    from{height:0;width:0}
+    to{height:33vmin;width:70vmin}
+}
+#set::-webkit-scrollbar{display:none;}
+#set{scrollbar-width:none;-ms-overflow-style:none;}
+input{
+    width:100%;
+}
+
+.timer{
+    position:absolute;
+    bottom:2%;
+    right:2%;
+    border-radius:50%;
+    background-color:white;
+    padding:1.2%;
+    border:10px solid yellow;
+    font-size:120%;
+    border-top-color:#000
+}
+.changes{
+    width:12.3vmax;
+    height: 15vmax;
+    text-align: center;
+    font-size:110%;
+    font-weight: normal;
+    position:absolute;
+    top:0%;
+    right:0%;
+    background-image: url('scoreboard.png');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+.adjust{
+    position:relative;
+    top:53%;
+}
 .fa-circle-info{
     position: absolute;
     top:2%;
@@ -132,7 +194,6 @@ button:hover{
     height:28%;
     animation-name: infooo;
     animation-duration:100ms;
-    /* animation-delay:1s; */
     animation-iteration-count: 1;
 }
 @keyframes infooo{from{width:0%}to{width:25%}}
@@ -140,19 +201,39 @@ button:hover{
 
 
 /* media query *start* */
+@media screen and (max-width:1100px){
+    .changes{
+        font-size:90%;
+    }
+}
 @media screen and (max-width:1030px){
     #outer{
         width:100%;
     }
     .info{height:31%}
+    .changes{
+        height:17vmax
+    }
 }
-@media screen and (max-width:850px){.info{height:40%;}}
-@media screen and (max-width:893px){.info{height:37%;}}
+@media screen and (max-width:893px){
+    .info{height:37%;}
+    .changes{
+        height:19vmax;width:14vmax;
+    }
+}
+@media screen and (max-width:850px){
+    .info{
+        height:40%;
+    }
+    .changes{
+        font-size:80%;
+    }
+}
 @media screen and(max-width:750px){
     .hide{
         height:76%;
     }
-    .info{width:40%}
+    .info{width:40%;}
 }
 @media screen and (max-width:720px){
     button{
@@ -164,6 +245,16 @@ button:hover{
     .info{
         height: 45%;
     }
+    .changes{
+        font-size:70%;
+    }
+}
+@media screen and (max-width:650px){
+    #outer{
+        width:100%;
+        height:60vmax;
+    }
+    .info{height:40%}
 }
 @media screen and (max-width:550px){
     button{
@@ -177,27 +268,23 @@ button:hover{
     }
     .info{width:64%}
 }
-@media screen and (max-width:380px){
-    button{
-        font-size:40%;
-    }
-    .hide{
-        height:73%;
-    }
-}
-@media screen and (max-width:650px){
-    #outer{
-        width:100%;
-        height:60vmax;
-    }
-    .info{height:40%}
-}
 @media screen and (max-width:420px){
     .ground{
         grid-template: repeat(3,1fr)/repeat(2,1fr);
     }
     .hide{
         height:80%;
+    }
+}
+#set{
+    height:20vmax;
+}
+@media screen and (max-width:380px){
+    button{
+        font-size:40%;
+    }
+    .hide{
+        height:73%;
     }
 }
 /* media query *end* */

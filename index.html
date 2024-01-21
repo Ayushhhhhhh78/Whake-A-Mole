@@ -19,6 +19,7 @@
     <body>
         <!--absolutes-->
         <i class="fa-solid fa-2x fa-circle-info"></i>
+
         <div class="info">
             <ul style="list-style-type: circle;">
                 <li>if you are using keyboard, press num 1-6 for every mole respectively.</li><br>
@@ -26,6 +27,33 @@
             </ul>
             <br>
             <button id="rm" style="background-color: #FFF; color:#000; background-image: none; border:1px solid black; height: fit-content; border-radius:5px; padding:2%; width: 100%;">Okay</button>
+        </div>
+
+        <div class="changes">
+            <div class="adjust">
+                <span style="font-size:80%; color:rgb(255,0,0)">
+                    Highest : <span>0</span>
+                </span>
+                <br>
+                <span>
+                    Score : <span id="scr">0</span>
+                </span>
+                <br>
+                <span style="color:rgb(3, 71, 3)">
+                    Press Start !
+                </span>
+            </div>
+        </div>
+
+        <div class="timer">60</div>
+
+        <div id="set">
+            <label id="spd-num">Snake Speed : 150</label>
+            <input type="range" max="500" min="20" value="150">
+            <label style="font-size:13px; color:rgb(3, 56, 3)">The less the speed value is, the fast the game will run !!!</label>
+            <br><br>
+            <button class="save" onclick="save()">Save</button><br>
+            <label style="font-size:13px; color:rgb(3, 56, 3)">Saving Changes will restart the game !!</label>
         </div>
         <!--absolutes end-->
 
@@ -76,9 +104,9 @@
                 </div>
             </div>
             <div class="buttons">
-                <button>Start</button>
+                <button onclick="start()">Start</button>
                 <button>Restart</button>
-                <button>Settings</button>
+                <button id="seti">Settings</button>
             </div>
         </div>
         <!--main content end-->
