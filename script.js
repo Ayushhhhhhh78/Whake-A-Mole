@@ -67,6 +67,7 @@ const engine = () => {
     },1300);
 }
 const start = () => {
+    document.getElementById('start').removeAttribute('onclick');
     document.getElementById('notify').innerHTML = "Playing !";
     setInterval(engine,1500);
     setInterval(()=>{
